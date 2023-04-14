@@ -179,7 +179,7 @@ Ao iniciar este projeto, você concorda com as diretrizes do Código de Conduta 
     <strong>🛠 Testes</strong>
   </summary><br>
 
-  - Para executar localmente os testes, é preciso estar na raiz do diretório do projeto e escrever o seguinte no seu terminal,:
+  - Para executar os testes, é preciso estar dentro do container, no diretório `/app` e escrever o seguinte comando no terminal:
 
   ```sh
   ./scripts/evaluate.sh
@@ -204,7 +204,7 @@ Ao iniciar este projeto, você concorda com as diretrizes do Código de Conduta 
     <strong>🐳 Como usar o Docker para este projeto</strong>
   </summary><br>
 
-  - Para quem não possui o MongoDB instalado e está utilizando o docker, é necessário executar os testes localmente usando os seguintes passos:
+  - Siga os seguintes passos:
 
   1. Acesse o terminal na raiz da pasta do projeto;
   2. Crie um container com um volume apontando para a pasta do projeto `docker run -d --name=nomeDoContainer -v "$PWD:/app" -p 27017:27017 mongo:5.0`;
@@ -221,13 +221,9 @@ Ao iniciar este projeto, você concorda com as diretrizes do Código de Conduta 
     <strong>♻️ Restaurando o banco de dados `commerce`</strong>
   </summary><br>
 
-  > ⚠️ **Aviso:** Caso esteja utilizando Docker, certifique-se que tenha seguido os passos do tópico: "🐳 Como usar o Docker para este projeto", pois eles são determinantes para que siga as orientações abaixo.
+  > ⚠️ **Aviso:** Certifique-se que tenha seguido os passos do tópico: "🐳 Como usar o Docker para este projeto", pois eles são determinantes para que siga as orientações abaixo.
 
-  1. Abra o terminal e conecte-se à sua instância local do **MongoDB**. Se você receber uma mensagem de erro como **_Connection refused_**, tente reiniciar sua instância [seguindo as orientações desse link](https://app.betrybe.com/learn/course/5e938f69-6e32-43b3-9685-c936530fd326/module/94d0e996-1827-4fbc-bc24-c99fb592925b/section/d2b16462-a889-47fc-aa04-92517825b186/day/da82d65f-2261-4bcb-87bb-71e6a7e565f5/lesson/8ff7e7c4-1748-4725-8f82-647f77d04830).
-
-  2. Quando sua instância estiver no ar e você estiver conectado a ela, digite `exit`. Com isso, você voltará ao terminal para iniciar a importação dos dados.
-
-  3. Na raiz do diretório do projeto, execute o seguinte comando para restaurar a base de dados `commerce`:
+  Dentro do container, no diretório `/app`, execute o seguinte comando para restaurar a base de dados `commerce`:
 
   ```sh
   DBNAME=commerce ./scripts/resetdb.sh assets/produtos
@@ -235,7 +231,7 @@ Ao iniciar este projeto, você concorda com as diretrizes do Código de Conduta 
 
   - A execução desse script criará um banco de dados chamado `commerce` e importará os dados para a coleção `produtos`.
 
-  ⚠️ **Importante**: tanto o script executado anteriormente quanto o script de execução local dos testes, restauram a base de dados `commerce`, portanto sempre salve seu progresso nos arquivos de desafio! Veja a orientação ➡️ 🛠 Testes ⚠️
+  ⚠️ **Importante**: tanto o script executado anteriormente quanto o script de execução dos testes, restauram a base de dados `commerce`, portanto sempre salve seu progresso nos arquivos de desafio! Veja a orientação ➡️ 🛠 Testes ⚠️
 
 </details>
 
@@ -260,7 +256,6 @@ Ao iniciar este projeto, você concorda com as diretrizes do Código de Conduta 
 
   4. Para entregar o seu projeto você deve criar um _Pull Request_ neste repositório. Este _Pull Request_ deve conter os arquivos `desafio1.js`, `desafio2.js` e assim sucessivamente até o `desafio32.js`, no diretório `challenges`, que terá o código `MQL` de cada desafio, respectivamente.
 
-  > **Caso você opte por não utilizar Docker para realizar os testes na sua máquina local**, é necessário que o clone do projeto seja realizado fora do diretório com nome `Área de Trabalho`. Isso quer dizer que, `Área de Trabalho` não pode estar no caminho do diretório onde o projeto foi clonado, pois o script que realiza os testes não consegue "encontrar" pastas que contenham espaços em seus nomes. Para checar se seu projeto está seguindo esse passo corretamente, utilize o comando `pwd` no terminal.
 
   ⚠️ **Restrições** ⚠️:
 
